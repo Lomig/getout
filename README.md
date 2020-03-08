@@ -16,7 +16,7 @@ The part that would tell you which artists you like can be seen on stage nearby 
 ## Technological Stack
 
 - [Ruby on Rails](https://rubyonrails.org)
-- [Stimulus JS](https://stimulusjs.org), a very nice JS microframework that plays nicely with Rails
+- [Stimulus JS](https://stimulusjs.org), a very cool JS microframework that plays nicely with Rails
 - [PostgreSQL](https://www.postgresql.org)
 - [Heroku](https://heroku.com) for deployment
 - [Cloudinary](https://cloudinary.com) for image storage
