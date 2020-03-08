@@ -1,3 +1,4 @@
+![GetOut Logo](https://raw.githubusercontent.com/Lomig/getout/master/app/assets/images/logo.png)
 # GetOut
 
 ## The Context
