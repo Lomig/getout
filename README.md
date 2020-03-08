@@ -3,7 +3,7 @@
 
 ## Context
 
-Project we presented as our end-of-studies project, GetOut is a Progressive Web App that connects to your spotify account to retrieve your favourite musical genres, and then let you find bars that would broadcast the same kind of music.
+Project we presented as our end-of-studies project, GetOut is a **Progressive Web App** (mobile only then) that connects to your spotify account to retrieve your favourite musical genres, and then let you find bars that would broadcast the same kind of music.
 
 ## Scope
 
