@@ -14,10 +14,10 @@ end
 
 Geocoder.configure(timeout: 60, lookup: :ban_data_gouv_fr)
 
-# `rails genre:seed`
+`rails genre:seed`
 puts "\n#{Genre.count} genres were created\n".green
 
-# `rails genre:sub_seed`
+`rails genre:sub_seed`
 puts "\n#{SubGenre.count} sub_genres were created\n".green
 
 PLACE_GENRES = []
@@ -155,13 +155,11 @@ PLACE_GENRES.fill(
 )
 
 Genre.all.each do |genre|
-
   PLACE_GENRES.fill(
     [genre],
     PLACE_GENRES.size,
     4
   )
-
 end
 
 places_file = File.read('db/places.json')
@@ -194,12 +192,10 @@ places_data.each_with_index do |place_data, i|
   downcase_name = place.name.downcase
 
   Genre.all.each do |genre|
-    PlaceGenre.create(place: place, genre: genre) if downcase_name.match(/#{genre.name}/)
+    PlaceGenre.create(place: place, genre: genre) if /#{genre.name}/.match?(downcase_name)
   end
 
-  if place.place_genres.count == 0
-    PLACE_GENRES.sample.each { |genre| PlaceGenre.create(place: place, genre: genre) }
-  end
+  PLACE_GENRES.sample.each { |genre| PlaceGenre.create(place: place, genre: genre) } if place.place_genres.count == 0
 
   puts "Place ##{i + 1} was created (#{place.photos.count} picture(s) with #{place.genres.count} genres)".blue
 end
