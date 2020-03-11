@@ -14,10 +14,10 @@ end
 
 Geocoder.configure(timeout: 60, lookup: :ban_data_gouv_fr)
 
-`rails genre:seed`
+# `rails genre:seed`
 puts "\n#{Genre.count} genres were created\n".green
 
-`rails genre:sub_seed`
+# `rails genre:sub_seed`
 puts "\n#{SubGenre.count} sub_genres were created\n".green
 
 PLACE_GENRES = []
@@ -171,6 +171,8 @@ places_data = JSON.parse(places_file)
 # Place DB Seed
 
 places_data.each_with_index do |place_data, i|
+  next if Place.find_by(name:  place_data['name'])
+
   place = Place.new(
     name: place_data['name'],
     address: place_data['geoloc_address'],
